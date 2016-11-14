@@ -1,0 +1,156 @@
+.put_body{
+    width: 7.5rem;
+    height: 12.06rem;
+    background: url("../images/001_07.png")no-repeat;
+    background-size: 100%;
+    position: relative;
+}
+.put_back{
+    width: 1.41rem;
+    height: 0.41rem;
+    position: absolute;
+    top: 0.4rem;
+    right: 0.7rem;
+}
+.put_in{
+    width: 6.09rem;
+    height: 0.93rem;
+    border: none;
+    outline: 0;
+    background-color: #f8f2e7;
+    text-indent: 0.2rem;
+    font-size: 0.3rem;
+}
+.put_name{
+    position: absolute;
+    top: 1.44rem;
+    left: 50%;
+    margin-left: -3.04rem;
+}
+.put_add{
+    position: absolute;
+    top: 2.61rem;
+    left: 50%;
+    margin-left: -3.04rem;
+}
+.put_body textarea{
+    resize: none;
+    border: none;
+    background-color: #f8f2e7;
+    position: absolute;
+    top: 3.79rem;
+    left: 50%;
+    margin-left: -3.04rem;
+    outline: 0;
+    width: 5.69rem;
+    height: 2.31rem;
+    padding: 0.2rem;
+    font-size: 0.3rem;
+}
+.put_btn{
+    width: 5.87rem;
+    height: 0.8rem;
+    background: url("../images/003_03.png")no-repeat;
+    background-size: 100%;
+    border: none;
+    position: absolute;
+    top: 9.31rem;
+    left: 50%;
+    margin-left: -2.93rem;
+    outline: 0;
+}
+.put_box{
+    width: 2.79rem;
+    height: 2.2rem;
+    font-size: 0.3rem;
+    color: #525252;
+}
+.one{
+    position: absolute;
+    top: 6.66rem;
+    left: 0.7rem;
+}
+.two{
+    position: absolute;
+    top: 6.66rem;
+    left: 4rem;
+}
+.put_box div{
+    width: 2.79rem;
+    height: 1.36rem;
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+}
+.put_box div img{
+    width: 100%;
+    height: 100%;
+}
+.put_box input{
+    width: 2.79rem;
+    height: 1.36rem;
+    opacity: 0;
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+}
+.two_bto{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 0.2rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
