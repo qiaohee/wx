@@ -64,15 +64,22 @@ class IndexController extends BaseController {
             $name = $_SESSION["nickname"];
             $head = $_SESSION["headimgurl"];
         }
-
+        $this->dump($_SESSION);
         $this->display();
     }
 
+    //固定方法,不能删除
     public function LoginAction(){
         $wc = new Wechat();
         $uri = APP_URL;
         $state = 123;
         $openid_url = $wc->get_authorize_url($uri,$state);
         header("Location:{$openid_url}");
+    }
+
+    private function dump($list){
+        echo "<pre>";
+        print_r($list);
+        exit;
     }
 }

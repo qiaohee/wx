@@ -17,3 +17,6 @@
 //echo $db->getRows();  //获得返回的行数
 //echo $db->getInsertId();  //获得自增ID
 //echo $db->getError();  //如果执行sql失败，可以获得失败原因
+
+//打印
+$this->dump();
