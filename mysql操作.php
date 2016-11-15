@@ -1,5 +1,10 @@
 <?php
+//项目地址
+//git clone https://github.com/qiaohee/wx.git
+
 //$db = M();  //获取数据库对象，前提是在入口文件配好数据库相关的配置
+
+//防止sql注入
 //$name = $db->escape($_GET['name']);  //转义字符
 
 //查询，失败返回false，否则返回数据
