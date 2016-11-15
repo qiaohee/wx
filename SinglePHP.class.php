@@ -254,6 +254,12 @@ class Controller {
         header("Location: $url");
         exit;
     }
+
+    protected function dump($list){
+        echo "<pre>";
+        print_r($list);
+        exit;
+    }
 }
 
 /**

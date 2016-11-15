@@ -18,7 +18,7 @@ class IndexController extends BaseController {
         $this->assign('onMenuShare', $onMenuShare);
 
         //数据操作
-        $db = M();
+        $this->db = M();
     }
 
     public function IndexAction(){
@@ -64,7 +64,6 @@ class IndexController extends BaseController {
             $name = $_SESSION["nickname"];
             $head = $_SESSION["headimgurl"];
         }
-        $this->dump($_SESSION);
         $this->display();
     }
 
@@ -75,11 +74,5 @@ class IndexController extends BaseController {
         $state = 123;
         $openid_url = $wc->get_authorize_url($uri,$state);
         header("Location:{$openid_url}");
-    }
-
-    private function dump($list){
-        echo "<pre>";
-        print_r($list);
-        exit;
     }
 }
