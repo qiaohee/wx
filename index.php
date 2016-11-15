@@ -2,8 +2,15 @@
 error_reporting(0);
 date_default_timezone_set('Asia/Shanghai');
 
+//项目路径
 $app = "wx";
 define("APP_URL","http://wx.seacore.com.cn/web2016/".$app."/index.php");
+
+//分享地址
+define("imgUrl","12"); //图片地址
+define("lineLink","123"); //分享地址
+define("shareTitle","123"); //标题
+define("descContent","123"); //内容
 
 include './SinglePHP.class.php';
 $config = array(

@@ -4,6 +4,18 @@ class IndexController extends BaseController {
         header("Content-Type:text/html; charset=utf-8");
         include('App/Lib/jssdk.php');
         include('App/Lib/Wechat.class.php');
+
+        //分享
+        $jssdk = new JSSDK('wx091f708185659476', '69f74ea8fb47c5585967073b537f262a');
+        $signPackage = $jssdk->GetSignPackage();
+        $this->assign('signPackage', $signPackage);
+
+        $onMenuShare = array();
+        $onMenuShare['imgUrl'] = imgUrl; //图片地址
+        $onMenuShare['lineLink'] = lineLink; //分享地址
+        $onMenuShare['shareTitle'] = shareTitle; //标题
+        $onMenuShare['descContent'] = descContent; //内容
+        $this->assign('onMenuShare', $onMenuShare);
     }
 
     public function IndexAction(){
@@ -47,22 +59,8 @@ class IndexController extends BaseController {
             $openid = $_SESSION["openid"];
             $name = $_SESSION["nickname"];
             $head = $_SESSION["headimgurl"];
-            echo $openid;
-            exit;
         }
 
-        //分享
-        $jssdk = new JSSDK('wx091f708185659476', '69f74ea8fb47c5585967073b537f262a');
-        $signPackage = $jssdk->GetSignPackage();
-        $this->assign('signPackage', $signPackage);
-
-        $onMenuShare = array();
-        $onMenuShare['imgUrl'] = '1'; //图片地址
-        $onMenuShare['lineLink'] = '1'; //分享地址
-        $onMenuShare['shareTitle'] = '1'; //标题
-        $onMenuShare['descContent'] = '1'; //内容
-
-        $this->assign('onMenuShare', $onMenuShare);
         $this->display();
     }
 
