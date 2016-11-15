@@ -1,6 +1,6 @@
 <?php
 $data = array(
-    'title' => $title,
+    'title' => '1212',
 );
 View::tplInclude('Public/header', $data); ?>
 <div class="put_body">
