@@ -2,6 +2,9 @@
 error_reporting(0);
 date_default_timezone_set('Asia/Shanghai');
 
+$app = "wx";
+define("APP_URL","http://wx.seacore.com.cn/web2016/".$app."/index.php");
+
 include './SinglePHP.class.php';
 $config = array(
     'APP_PATH' => './App/', #APP业务代码文件夹
