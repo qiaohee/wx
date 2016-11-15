@@ -16,6 +16,9 @@ class IndexController extends BaseController {
         $onMenuShare['shareTitle'] = shareTitle; //标题
         $onMenuShare['descContent'] = descContent; //内容
         $this->assign('onMenuShare', $onMenuShare);
+
+        //数据操作
+        $db = M();
     }
 
     public function IndexAction(){
