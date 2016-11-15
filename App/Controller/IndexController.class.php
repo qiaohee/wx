@@ -22,7 +22,8 @@ class IndexController extends BaseController {
         //获取openid
         $openid = $_SESSION["openid"];
         if(empty($openid)) {
-            if ($_GET['code'] == "") {
+            $code = $_GET['code'];
+            if (empty($code)) {
                 $this->redirect('index.php?a=login');
             } else {
                 $wc = new Wechat();
