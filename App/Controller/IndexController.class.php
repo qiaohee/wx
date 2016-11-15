@@ -70,7 +70,7 @@ class IndexController extends BaseController {
         $wc = new Wechat();
         $uri = "http://wx.seacore.com.cn/web2016/wx/index.php";
         $state = 123;
-        $ss = $wc->get_authorize_url($uri,$state);
-        header("Location:{$ss}");
+        $openid_url = $wc->get_authorize_url($uri,$state);
+        header("Location:{$openid_url}");
     }
 }
