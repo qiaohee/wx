@@ -68,7 +68,7 @@ class IndexController extends BaseController {
 
     public function LoginAction(){
         $wc = new Wechat();
-        $uri = "http://wx.seacore.com.cn/web2016/SinglePHP/index.php";
+        $uri = "http://wx.seacore.com.cn/web2016/wx/index.php";
         $state = 123;
         $ss = $wc->get_authorize_url($uri,$state);
         header("Location:{$ss}");
