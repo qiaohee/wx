@@ -9,12 +9,12 @@
         signature: '<?php echo $signPackage["signature"];?>',
         jsApiList: ['onMenuShareTimeline','onMenuShareAppMessage']
     });
-    var imgUrl =<?php echo $onMenuShare['imgUrl'];?>;
+    var imgUrl ="<?php echo $onMenuShare['imgUrl'];?>";
     //var lineLink="http://wx.seacore.com.cn/wxzsmz/hsjh/game/APP/index.php";
-    var lineLink=<?php echo $onMenuShare['lineLink'];?>
+    var lineLink="<?php echo $onMenuShare['lineLink'];?>";
     //分享朋友
-    var shareTitle=<?php echo $onMenuShare['shareTitle'];?>;
-    var descContent=<?php echo $onMenuShare['descContent'];?>;
+    var shareTitle="<?php echo $onMenuShare['shareTitle'];?>";
+    var descContent="<?php echo $onMenuShare['descContent'];?>";
     wx.ready(function () {
         wx.showOptionMenu();
         var shareData = {

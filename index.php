@@ -7,8 +7,8 @@ $app = "wx";
 define("APP_URL","http://wx.seacore.com.cn/web2016/".$app."/index.php");
 
 //分享地址
-define("imgUrl","12"); //图片地址
-define("lineLink","123"); //分享地址
+define("imgUrl","http://wx.seacore.com.cn/web2016/".$app."/static/images/fenxiang.png"); //图片地址
+define("lineLink","http://seacore.com.cn/href/web2016/".$app.".html"); //分享地址
 define("shareTitle","123"); //标题
 define("descContent","123"); //内容
 
