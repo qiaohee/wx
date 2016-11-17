@@ -75,4 +75,56 @@ class IndexController extends BaseController {
         $openid_url = $wc->get_authorize_url($uri,$state);
         header("Location:{$openid_url}");
     }
+
+    public function ListAction(){
+        $ret = $this->db->query("select * from hcsh order by id desc");
+        $this->assign('ret',$ret);
+        $this->display();
+    }
+
+    public function ExportAction(){
+        error_reporting(E_ALL);
+        include('App/Lib/PHPExcel/PHPExcel.php');
+        include('App/Lib/PHPExcel/PHPExcel/Writer/Excel5.php');
+        $objPHPExcel = new PHPExcel();
+
+        $ret = $this->db->query("select * from hcsh order by id desc");
+
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A1','序号');
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('B1','微信名');
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('C1','名字');
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('D1','电话');
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('E1','报名类型');
+        $objPHPExcel->setActiveSheetIndex(0)->setCellValue('F1','时间');
+
+        //把数据循环写入excel中
+        foreach($ret as $key => $value){
+            $key+=2;
+            $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A'.$key,$value['id']);
+            $objPHPExcel->setActiveSheetIndex(0)->setCellValue('B'.$key,$value['name']);
+            $objPHPExcel->setActiveSheetIndex(0)->setCellValue('C'.$key,$value['username']);
+
+            $objPHPExcel->setActiveSheetIndex(0)->setCellValue('D'.$key,$value['tell']);
+            if($value["type"]==1){
+                $objPHPExcel->setActiveSheetIndex(0)->setCellValue('E'.$key,"冬日暖阳");
+            }else{
+                $objPHPExcel->setActiveSheetIndex(0)->setCellValue('E'.$key,"种下希望 收获幸福");
+            }
+            $objPHPExcel->setActiveSheetIndex(0)->setCellValue('F'.$key,date("Y-m-d",$value['time']));
+        }
+        $objPHPExcel->getActiveSheet()->setTitle(appname);
+
+        $objWriter = new PHPExcel_Writer_Excel5($objPHPExcel);
+        $objWriter->save(str_replace('.php', '.xls', __FILE__));
+        header("Pragma: public");
+        header("Expires: 0");
+        header("Cache-Control:must-revalidate,post-check=0,pre-check=0");
+        header("Content-Type:application/force-download");
+        header("Content-Type:application/vnd.ms-execl");
+        header("Content-Type:application/octet-stream");
+        header("Content-Type:application/download");
+        header("Content-Disposition:attachment;filename=".appname.".xls");
+        header("Content-Transfer-Encoding:binary");
+        $objWriter->save("php://output");
+    }
 }
