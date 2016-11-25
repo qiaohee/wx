@@ -90,6 +90,12 @@ class IndexController extends BaseController {
 
         $ret = $this->db->query("select * from hcsh order by id desc");
 
+        if(empty($ret))
+        {
+            echo "没有数据导出";
+            exit;
+        }
+
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue('A1','序号');
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue('B1','微信名');
         $objPHPExcel->setActiveSheetIndex(0)->setCellValue('C1','名字');
