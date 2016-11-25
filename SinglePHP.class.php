@@ -486,10 +486,15 @@ class DB {
             $this->_rows = mysql_num_rows($res);
             $result = array();
             if($this->_rows >0) {
-                while($row = mysql_fetch_array($res, MYSQL_ASSOC)){
-                    $result[]   =   $row;
+                if($this->_rows == 1) {
+                    $row = mysql_fetch_array($res, MYSQL_ASSOC);
+                    $result = $row;
+                }else {
+                    while ($row = mysql_fetch_array($res, MYSQL_ASSOC)) {
+                        $result[] = $row;
+                    }
                 }
-                mysql_data_seek($res,0);
+                mysql_data_seek($res, 0);
             }
             return $result;
         }
