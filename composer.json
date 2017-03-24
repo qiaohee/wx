@@ -1,0 +1,13 @@
+{
+    "name": "wx/framework",
+    "description": "哎呀",
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "wx\\": "src/"
+        },
+        "files": ["src/index.php"]
+    }
+}
